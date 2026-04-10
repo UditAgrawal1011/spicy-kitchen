@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spicy Kitchen</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* THEME COLORS */
+:root {
+  --green: #0F9D58;
+  --orange: #FF8A00;
+  --white: #FFFFFF;
+  --bg: #F5F7F6;
+  --text: #222222;
+}
+
+/* BODY */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h2 {
+  color: var(--green);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(15,157,88,0.85), rgba(15,157,88,0.9)),
+              url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: var(--orange);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(255,138,0,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #e67600;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 8%;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--green);
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARDS */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 280px;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 10px;
+}
+
+.card p {
+  padding: 0 10px 10px;
+  color: #666;
+}
+
+/* MENU BUTTONS */
+.menu-btn {
+  padding: 10px 22px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: var(--white);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* Customers review*/
+.slider {
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  animation: slide 9s infinite;
+}
+
+.review-box {
+  min-width: 100%;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.review-box p {
+  font-style: italic;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* INSTAGRAM CARD */
+.insta-card {
+  background: linear-gradient(135deg, var(--green), #34d399);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.insta-card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Review */
+.review-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 350px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.review-card img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.review-card h3 {
+  color: var(--green);
+}
+
+/* FOOTER */
+footer {
+  background: var(--white);
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* optional (round logo) */
+  object-fit: cover;
+}
+
+.logo h2 {
+  color: var(--green);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  
+<div class="logo">
+  <img src="images/WhatsApp Image 2026-04-09 at 12.15.10 AM.jpeg" alt="logo">
+  <h2>Spicy Kitchen</h2>
+</div>
+
+  <div>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Delicious Food, Delivered Fresh</h1>
+    <a href="https://www.zomato.com/" target="_blank" class="btn">Order on Zomato</a>
+  </div>
+</section>
+
+<!-- MENU -->
+<!-- MENU -->
+<section id="menu" class="section">
+  <h2>Our Menu</h2>
+
+  <!-- CATEGORY BUTTONS -->
+  <div style="text-align:center; margin-bottom:30px;">
+    <button class="menu-btn" onclick="showMenu('sandwich')">Sandwich</button>
+    <button class="menu-btn" onclick="showMenu('pasta')">Pasta</button>
+    <button class="menu-btn" onclick="showMenu('maggi')">Maggi</button>
+    <button class="menu-btn" onclick="showMenu('friedrice')">Fried Rice</button>
+    <button class="menu-btn" onclick="showMenu('sweetcorn')">Sweet Corn</button>
+    <button class="menu-btn" onclick="showMenu('beverages')">Beverages</button>
+  </div>
+
+  <!-- ITEMS -->
+  <div id="menu-items" class="menu"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>Why Choose Us</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    We maintain top hygiene standards and use premium ingredients.
+    Our cloud kitchen ensures quick delivery and consistent quality.
+  </p>
+</section>
+
+<!--customers revview-->
+<section class="section">
+  <h2>What Our Customers Say</h2>
+
+  <div class="slider">
+    <div class="slides">
+
+      <div class="review-box">
+        <p>"Amazing taste! Loved the Maggi ❤️"</p>
+        <div class="stars">★★★★★</div>
+        <h4>- Rahul</h4>
+      </div>
+
+      <div class="review-box">
+        <p>"Best cold coffee in town 🔥"</p>
+        <div class="stars">★★★★★</div>
+        <h4>- Priya</h4>
+      </div>
+
+      <div class="review-box">
+        <p>"Super hygienic & fast delivery"</p>
+        <div class="stars">★★★★☆</div>
+        <h4>- Aman</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM CARD -->
+<section class="section">
+  <div class="insta-card">
+    <img src="images/WhatsApp Image 2026-04-09 at 12.15.10 AM.jpeg">
+    <h3>@spicykitchen</h3>
+    <p>Followers: 100+</p>
+    <p>Reach: 1M+/month</p>
+    <a href="#" class="btn">Follow on Instagram</a>
+  </div>
+</section>
+
+<!--Review card-->
+<section class="section">
+  <h2>Rate Us on Google</h2>
+
+  <div class="review-card">
+    <img src="images/google-qr.png" alt="QR Code">
+
+    <h3>Scan & Review Us ⭐</h3>
+    <p>Your feedback helps us grow!</p>
+
+    <a href="https://g.page/r/YOUR-GOOGLE-LINK/review" target="_blank" class="btn">
+      Write a Review
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Order Now</h2>
+  <div style="text-align:center;">
+    <a href="https://www.zomato.com/" target="_blank" class="btn">Open Zomato</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Spicy Kitchen</p>
+  <p>
+    Follow us on 
+    <a href="#">Instagram</a>
+  </p>
+</footer>
+
+<!--menu items-->
+<script>
+const menuData = {
+  sandwich: [
+    {
+      name: "Veg Grilled Sandwich",
+      desc: "Loaded with veggies & cheese",
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af"
+    },
+    {
+      name: "Cheese n Corn Sandwich",
+      desc: "Creamy corn & melted cheese",
+      img: "images/Cheese-Corn-Capsicum-Grill-Sandwich.png"
+    }
+  ],
+
+  pasta: [
+    {
+      name: "White Sauce Pasta",
+      desc: "Creamy Alfredo pasta",
+      img: "images/white-sauce-pasta-featured.webp"
+    },
+    {
+      name: "Fresh Veggie Pasta",
+      desc: "Rich in flavor",
+      img: "images/1-pan-pasta-with-creamy-tomato-sauce-vegetables-in-black-skillet.jpg"
+    }
+  ],
+
+  maggi: [
+    {
+      name: "Classic Masala Maggi",
+      desc: "Simple & tasty",
+      img: "images/store_01JCTEB2T19Q13HV8ANWR9HC2Q_assets_1731961809171-54258212-bda6-4162-95f2-b8d3a662862d.jpeg"
+    },
+    {
+      name: "Cheese Maggi",
+      desc: "Extra cheesy goodness",
+      img: "images/f6d480af28b14b4226639ef9a4042835.jpg"
+    },
+    {
+      name: "Exotic Veggie Maggi",
+      desc: "Maggi with fresh veggies",
+      img: "images/Veg-Masala-Maggi.png"
+    }
+  ],
+
+  friedrice: [
+    {
+      name: "Himachali Fried Rice",
+      desc: "Spicy Masale filling",
+      img: "images/2d963bfb-a7c0-4743-b352-719a69875f11.avif"
+    }
+  ],
+
+  sweetcorn: [
+    {
+      name: "Plain Sweet Corn",
+      desc: "with lemon salt Chilli",
+      img: "images/Indian-Flavored-Corn-Chaat-2-3.jpg"
+    }
+  ],
+
+  beverages: [
+    {
+      name: "Vanilla Cold Coffee",
+      desc: "Smooth & chilled",
+      img: "images/b0e4ada050561d618e120d8ffd9aee3e.jpg"
+    },
+    {
+      name: "Butterscotch Cold Coffee",
+      desc: "Rich Butterscotch flavor",
+      img: "images/0cca23a474c32dd704714b2a6344aa4b.jpg"
+    },
+    {
+      name: "Cold Coffee with Ice Cream",
+      desc: "Thick & creamy",
+      img: "images/iced-coffee-with-ice-cream.jpg"
+    },
+    {
+      name: "Mojito",
+      desc: "Rich Mint Lime flavor",
+      img: "images/how-to-make-a-mojito-recipe-735x1103.jpg"
+    },
+    {
+      name: "Kitkat Shake",
+      desc: "Rich Kitkat flavor",
+      img: "images/0360c05e27f88e9589f01bb951c299d6.jpg"
+    },
+    {
+      name: "Oreo Shake",
+      desc: "Rich Oreo flavor",
+      img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699"
+    }
+  ]
+};
+
+function showMenu(category) {
+  const container = document.getElementById("menu-items");
+  container.innerHTML = "";
+
+  menuData[category].forEach(item => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${item.img}">
+        <h3>${item.name}</h3>
+        <p>${item.desc}</p>
+      </div>
+    `;
+  });
+}
+
+// Default load
+showMenu('sandwich');
+</script>
+
+</body>
+</html>
